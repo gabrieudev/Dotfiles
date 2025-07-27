@@ -1,0 +1,140 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "custom/power",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+    "custom/weather"
+  ],
+  "modules-right": [
+    "bluetooth",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "network",
+    "cpu",
+    "memory",
+    "tray",
+    "custom/lock",
+    "custom/notifications"
+  ],
+  "custom/notifications": {
+    "format": " 󰂚 ",
+    "tooltip": false,
+    "on-click": "swaync-client -t -sw",
+    "class": "notifications-icon"
+  },
+  "bluetooth": {
+    "format": " 󰂯 ",
+    "format-disabled": " 󰂲 ",
+    "format-connected": " 󰂱 ",
+    "on-click": "blueman-manager"
+  },
+  "custom/power": {
+    "format": " 󰐥 ",
+    "tooltip": false,
+    "on-click": "wlogout -b 5"
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{name}",
+    "cursor": true
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+  "custom/music": {
+    "format": "  {}",
+    "escape": true,
+    "interval": 5,
+    "tooltip": false,
+    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
+    "on-click": "playerctl play-pause",
+    "max-length": 50
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%d/%m/%Y - %H:%M}",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span color='#F5C2E7'><b>{}</b></span>",
+        "weekdays": "<span color='#89B4FA'><b>{}</b></span>",
+        "days": "<span color='#CDD6F4'><b>{}</b></span>",
+        "today": "<span color='#F9E2AF'><b>{}</b></span>"
+      }
+    }
+  },
+  "network": {
+    "format-wifi": "󰤢 {bandwidthDownBits}",
+    "format-ethernet": "󰈀 {bandwidthDownBits}",
+    "format-disconnected": "󰤠 No Network",
+    "interval": 5,
+    "tooltip": false
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ]
+  },
+  "memory": {
+    "interval": 30,
+    "format": "  {used:0.1f}G/{total:0.1f}G"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        " "
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "notifications": {
+    "format": "{icon}",
+    "on-click": "swaync-client -t -sw"
+  },
+  "battery": {
+    "states": {
+      "good": 85,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-alt": "{icon} {capacity}%",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ],
+    "tooltip-format": "{time}",
+    "cursor": false
+  },
+  "backlight": {
+    "format": "󰃞 {percent}%",
+    "tooltip": false
+  }
+}
