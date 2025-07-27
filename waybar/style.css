@@ -117,20 +117,17 @@
 
 #network {
   color: #8fbcbb;
-  border-radius: 5px;
 }
 
 #cpu {
   color: #b8bb26;
-  border-radius: 5px;
 }
 
 #memory {
   color: #b8bb26;
-  border-radius: 5px;
 }
 
 #custom-notifications {
   color: #f38ba8;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
 }
